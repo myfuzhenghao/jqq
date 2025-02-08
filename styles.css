@@ -1,0 +1,344 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: url('imgs/bg.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* 确保背景图固定 */
+}
+
+.hero-section {
+    height: 100vh; /* 只需要设置高度，背景图已在body中设置 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 0; /* 移除导航栏后调整 */
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+}
+
+.btn {
+    background-color: #ff9800;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.carousel {
+    padding: 50px 0;
+    background-color: transparent; /* 设置背景为透明 */
+    text-align: center;
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 300px;
+}
+
+.carousel-slide {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: absolute;
+    opacity: 0.5;
+    width: 100%;
+    max-width: 500px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.carousel-slide.active {
+    transform: scale(1.2);
+    opacity: 1;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%) scale(1.2);
+}
+
+.carousel-slide.left {
+    transform: translateX(-120%) scale(0.8); /* 调整左边图片的位置 */
+    z-index: 0;
+}
+
+.carousel-slide.right {
+    transform: translateX(120%) scale(0.8); /* 调整右边图片的位置 */
+    z-index: 0;
+}
+
+.carousel-slide img {
+    width: 100%;
+    border-radius: 10px;
+    max-width: 500px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: #333;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 2em;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.avatar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9800;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    z-index: 1000; /* 置于最顶层 */
+}
+
+.chat-icon:hover {
+    background-color: #e68900;
+}
+
+.chat-icon::before {
+    content: '...';
+    color: #fff;
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+.chatbox {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 400px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbox-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.chatbox-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbox-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* 增加消息之间的间距 */
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #dcf8c6; /* 微信绿色 */
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.ai-message {
+    align-self: flex-start;
+    background-color: #fff;
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.chatbox-input-container {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.chatbox-input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.chatbox-send-btn {
+    background-color: #ff9800;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chatbox-send-btn:hover {
+    background-color: #e68900;
+}
+
+.portfolio {
+    padding: 50px 0;
+    text-align: center;
+    margin-top: -20px; /* 向上移动作品集区域 */
+}
+
+.portfolio h2 {
+    color: #fff; /* 设置为白色 */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em; /* 与"小青AI"一致 */
+    margin: 0 0 20px 0;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 确保有三列 */
+    gap: 20px;
+    justify-items: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    padding: 20px;
+}
+
+.portfolio-item {
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-item img {
+    width: 150px; /* 设置固定宽度 */
+    height: 150px; /* 设置固定高度 */
+    border-radius: 10px;
+    object-fit: cover; /* 确保图片按比例缩放 */
+    margin: auto; /* 居中缩略图 */
+    border: 5px solid #fff; /* 添加白色边框 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.modal-gallery img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.modal-gallery img:hover {
+    transform: scale(1.1);
+} 

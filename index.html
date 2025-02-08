@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- 头像框 -->
+    <div class="avatar">
+        <img src="imgs/head.jpg" alt="头像">
+    </div>
+
+    <!-- 首页 -->
+    <header id="hero" class="hero-section" style="margin-top: 10px;">
+        <div class="hero-content">
+            <h1>小青AI</h1>
+            <p>我是你的AI助手，有什么问题可以问我哦</p>
+            <a href="#photos" class="btn">了解更多</a>
+        </div>
+    </header>
+
+    <!-- 作品集区域 -->
+    <section id="portfolio" class="portfolio">
+        <h2>作品集</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-modal="modal1">
+                <img src="imgs/one/1.jpg" alt="作品1">
+            </div>
+            <div class="portfolio-item" data-modal="modal2">
+                <img src="imgs/two/1.jpg" alt="作品2">
+            </div>
+            <div class="portfolio-item" data-modal="modal3">
+                <img src="imgs/three/1.jpg" alt="作品3">
+            </div>
+            <!-- 添加更多作品 -->
+        </div>
+    </section>
+
+    <!-- 模态框 -->
+    <div class="modal" id="modal1">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>第一幕</h3>
+            <div class="modal-gallery">
+                <img src="imgs/one/1.jpg" alt="作品1图片1">
+                <img src="imgs/one/2.jpg" alt="作品1图片2">
+                <img src="imgs/one/3.jpg" alt="作品1图片3">
+                <!-- 添加更多图片 -->
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modal2">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>第二幕</h3>
+            <div class="modal-gallery">
+                <img src="imgs/two/1.jpg" alt="作品2图片1">
+                <img src="imgs/two/2.jpg" alt="作品2图片2">
+                <img src="imgs/two/3.jpg" alt="作品2图片3">
+                <!-- 添加更多图片 -->
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modal3">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>第三幕</h3>
+            <div class="modal-gallery">
+                <img src="imgs/three/1.jpg" alt="作品3图片1">
+                <img src="imgs/three/2.jpg" alt="作品3图片2">
+                <img src="imgs/three/3.jpg" alt="作品3图片3">
+                <!-- 添加更多图片 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- AI聊天图标 -->
+    <div class="chat-icon" id="chatIcon">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- AI聊天对话框 -->
+    <div class="chatbox" id="chatbox" style="display: none;">
+        <div class="chatbox-header">和我聊天</div>
+        <div class="chatbox-body">
+            <div class="chatbox-messages"></div>
+            <div class="chatbox-input-container">
+                <input type="text" class="chatbox-input" placeholder="输入消息...">
+                <button class="chatbox-send-btn">发送</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 照片轮播展示区 -->
+    <section id="photos" class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="imgs/p1.jpg" alt="照片1">
+            </div>
+            <div class="carousel-slide">
+                <img src="imgs/p2.jpg" alt="照片2">
+            </div>
+            <div class="carousel-slide">
+                <img src="imgs/p3.jpg" alt="照片3">
+            </div>
+            <!-- 添加更多照片 -->
+        </div>
+    </section>
+
+    <!-- 社交媒体链接区 -->
+    <section class="social-media">
+        <a href="https://weixin.com" target="_blank"><i class="fab fa-weixin"></i></a>
+        <a href="https://weibo.com" target="_blank"><i class="fab fa-weibo"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+    </section>
+
+    <!-- 底部 -->
+    <footer id="contact">
+        <p>联系方式: 398161990@qq.com | 电话: 13678169353</p>
+        <p>© 2025 小青AI</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
